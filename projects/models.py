@@ -1,4 +1,5 @@
 from django.utils import timezone
+from django.utils.timezone import now
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
@@ -15,7 +16,7 @@ class Project(models.Model):
     source_link = models.CharField(max_length=2000, null=True, blank=True,validators=[URLValidator()])
     note_link = models.CharField(max_length=2000, null=True, blank=True,validators=[URLValidator()])
 
-    created_date = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateTimeField(default=now,editable=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     class Meta:

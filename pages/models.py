@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.timezone import now
+
 import uuid
 from django_prose_editor.sanitized import SanitizedProseEditorField
 
@@ -11,7 +13,7 @@ class Page(models.Model):
     excerpt = models.CharField(max_length=255,blank=True,null=True)
     slug = models.SlugField(unique=True)
     content = models.TextField(blank=True,null=True)
-    created_date = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateTimeField(default=now,editable=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     class Meta:

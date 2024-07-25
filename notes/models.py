@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 from django.contrib.auth.models import User
 import uuid
 from django_prose_editor.sanitized import SanitizedProseEditorField
@@ -20,7 +21,7 @@ class Note(models.Model):
     content = models.TextField(blank=True,null=True)
     featured_image = FilerImageField(null=True, blank=True,on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag, related_name='notes',blank=True)
-    created_date = models.DateTimeField(auto_now_add=True)
+    created_date = models.DateTimeField(default=now,editable=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     class Meta:
