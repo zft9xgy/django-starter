@@ -1,7 +1,6 @@
 ## rafaelcosquiere.com
 
-![BETA]
-
+> [!IMPORTANT]
 > Actualmente la web esta en fase beta y se encuentra en el subdominaio dev.rafalecosquiere.com la web original rafaelcosquiere.com es un desarrollo en WordPress.
 
 Aqui puedes encontrar el codigo de la web [dev.rafaelcosquiere.com](https://dev.rafaelcosquiere.com/) desarrollada en Django y con código vanilla css/js, es decir, puro html,css,js. Nada de librerias y framework frontend por ahora.
