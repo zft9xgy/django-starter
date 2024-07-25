@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %} {% load static %}
+
+<!-- -->
+{% block content %}
+<div class="s-content">
+  <div class="row row-x-center">
+    <div id="main" class="s-content__main large-10 column">
+      <form class="form" action="" method="POST">
+        {% csrf_token %}
+        <!-- -->
+        {% for field in form %}
+        <!-- -->
+        {{field.as_field_group}}
+        <!-- -->
+        {% endfor %}
+
+        <input
+          class="btn btn--sub btn--lg my-md"
+          type="submit"
+          value="Submit"
+        />
+      </form>
+    </div>
+    <!-- end main -->
+  </div>
+  <!-- end row -->
+</div>
+
+{% endblock %}

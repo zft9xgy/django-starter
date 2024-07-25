@@ -1,0 +1,25 @@
+from django.shortcuts import render, get_object_or_404
+from notes.models import Note
+from projects.models import Project
+from tags.models import Tag
+
+
+def tags(request):
+    tags = Tag.objects.all()
+
+    context = {
+        'title':'Tags',
+        'tags': tags,
+    }
+    return render(request,'uniques/tags.html',context)
+
+def tag(request,slug):
+    tag = get_object_or_404(Tag,slug=slug)
+    tags = Tag.objects.all().exclude(id=tag.id)
+
+    context = {
+        'title':tag.name,
+        'tag': tag,
+        'tags':tags
+    }
+    return render(request,'generic/single-tag.html',context)

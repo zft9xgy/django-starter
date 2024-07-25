@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %} {% load static %}
+
+<!-- -->
+{% block content %}
+
+<main class="page-wrapper">
+  <section class="section single-page-section">
+    <div class="section-header">
+      <h1 class="page-title">{{page.title}}</h1>
+      {% if page.excerpt %}
+      <p class="section-description">{{page.excerpt}}</p>
+      {% endif %}
+    </div>
+
+    <div class="content single-page-content">
+      {{page.content | markdown | safe}}
+    </div>
+  </section>
+</main>
+{% endblock %}

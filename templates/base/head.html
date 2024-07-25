@@ -1,0 +1,78 @@
+{% load static %}
+<head>
+  <meta charset="utf-8" />
+  {% if global.seo_index %}
+  <!---->
+  {% if seometa.index == False %}
+  <meta name="robots" content="noindex" />
+  {% else %}
+  <meta name="robots" content="index" />
+  {% endif %}
+  <!---->
+  {% else %}
+  <!-- noindex default -->
+  <meta name="robots" content="noindex" />
+  {% endif %}
+  <!-- meta follow-->
+  {% if global.seo_follow == True %}
+  <!---->
+  {% if seometa.follow == False %}
+  <meta name="robots" content="nofollow" />
+  {% else %}
+  <meta name="robots" content="follow" />
+  {% endif %}
+  <!---->
+  {% else %}
+  <meta name="robots" content="nofollow" />
+  {% endif %}
+
+  <!-- title -->
+  <title>{{title|default:'Keep it simple!'}}</title>
+
+  <!-- meta title and escription -->
+  {% if seodata %}
+  <meta name="title" content="{{seodata.meta_title}}" />
+  <meta name="description" content="{{seodata.meta_description}}" />
+  {% else %}
+  <meta name="title" content="{{title|default:'Keep it simple!'}}" />
+  <meta name="description" content="" />
+  {% endif %}
+
+  <meta name="author" content="Rafael Cosquiere" />
+
+  <!-- mobile specific metas
+    ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- CSS
+    ================================================== -->
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/dark.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+  <!-- script
+    ================================================== -->
+  <script defer src="{% static 'js/main.js' %}"></script>
+
+  <!-- favicons
+    ================================================== -->
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{% static 'favicon/apple-touch-icon.png' %}"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="{% static 'favicon/favicon-32x32.png' %}"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="{% static 'favicon/favicon-16x16.png' %}"
+  />
+  <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}" />
+</head>

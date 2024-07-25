@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+  {% include 'base/head.html' %}
+
+  <body id="top" class="">
+    {% include 'base/header.html' %}
+    <!-- -->
+    {% block content %}
+    <!-- -->
+    {% endblock content %}
+    <!-- -->
+    {% include 'base/footer.html' %}
+    <!-- -->
+    {% include 'base/foot.html' %}
+  </body>
+</html>

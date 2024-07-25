@@ -1,0 +1,101 @@
+{% extends 'base/base.html' %} {% load static %}
+
+<!-- -->
+{% block content %}
+
+<main class="page-wrapper">
+  <section class="section hero">
+    <div class="bio">
+      <h1 class="bio-title">$ ~/rafael-cosquiere</h1>
+      <div class="bio-description">
+        Llevo dedicandome al marketing digital y SEO desde hace más de 6 años,
+        aunque hago un poco de todo: WordPress + Elementor, Python, Linux,
+        Automatizaciones y Ciberseguridad entre otros. 100% ADN autodidacta.
+        Ahh, y soy padre de una niña de dos años.
+      </div>
+    </div>
+    <div class="memoji">
+      <img
+        src="/uploads/images/memoji-rafaelcosquiere.png"
+        alt="rafael-cosquiere-memoji"
+      />
+    </div>
+  </section>
+
+  <section class="section notes">
+    <div class="home-section-header">
+      <h2 class="section-title">$ ls -l ~/notes</h2>
+      <a class="button" href="{% url 'notes' %}">View all notes</a>
+    </div>
+
+    {% for note in notes %}
+
+    <article class="note">
+      <a href="{% url 'note' note.slug %}" class="note-link">
+        <h3 class="note-title">{{note.title}}</h3>
+        <time class="note-date">{{note.created_date | date:'M d (Y)' }}</time>
+      </a>
+    </article>
+
+    {% endfor %}
+  </section>
+
+  <section class="section projects-section">
+    <div class="home-section-header">
+      <h2 class="section-title">$ ls ~/projects</h2>
+      <a class="button" href="{% url 'projects' %}">View all projects</a>
+    </div>
+    <div class="projects-grid">
+      {% for project in projects %}
+      <article class="project">
+        <div class="project-date">{{project.created_date|date:'M Y'}}</div>
+        <h3 class="project-title">{{project.title}}</h3>
+        <div class="project-short">{{project.short_description}}</div>
+        <div class="project-links">
+          {% if project.note_link %}
+          <a class="project-link button" href="{{project.note_link}}">Note</a>
+          {% endif %}
+          <!-- -->
+          {% if project.source_link %}
+          <a
+            target="_blank"
+            class="project-link button"
+            href="{{project.source_link}}"
+            >Source</a
+          >
+          {% endif %}
+          <!-- -->
+          {% if project.demo_link %}
+          <a
+            target="_blank"
+            class="project-link button"
+            href="{{project.demo_link}}"
+            >Demo</a
+          >
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section tags-section">
+    <div class="home-section-header">
+      <h2 class="section-title">$ ls ~/tags</h2>
+      <a class="button" href="{% url 'tags' %}">View all tags</a>
+    </div>
+
+    <div class="tags">
+      {% for tag in tags %}
+
+      <a class="tag" href="{% url 'tag' tag.slug %}"
+        ><h3 class="tag-title">
+          <span class="hashtag">#</span>{{tag.name}}
+        </h3></a
+      >
+
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

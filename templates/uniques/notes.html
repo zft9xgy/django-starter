@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %} {% load static %}
+<!-- -->
+
+{% block title %} {{ title|default:'Keep it simple!' }} {% endblock %}
+
+<!-- -->
+{% block content %}
+<main class="page-wrapper page-notes">
+  <section class="notes-section section">
+    <div class="section-header">
+      <h1 class="page-title">Notes</h1>
+      <p class="section-description">
+        A loose collection of notes, entries, tutorial excerpts, thoughts and
+        other things.
+      </p>
+    </div>
+
+    {% for year in years %}
+    <div class="note-year-section">
+      <h2 class="note-year">{{year}}</h2>
+      <div class="notes-year-list">
+        {% for note in notes %}
+        <!-- -->
+        {% if note.created_date|date:'Y' == year|stringformat:"s" %}
+        <!-- -->
+        <article class="note">
+          <a href="{% url 'note' note.slug %}" class="note-link">
+            <h3 class="note-title">{{note.title}}</h3>
+            <time class="note-date"
+              >{{note.created_date | date:'l d F \a \l\a\s G:i' }}</time
+            >
+          </a>
+        </article>
+        {% endif %}
+        <!-- -->
+        {% endfor %}
+        <!-- -->
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

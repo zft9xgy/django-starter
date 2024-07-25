@@ -1,0 +1,72 @@
+{% extends 'base/base.html' %} {% load static %} {% load thumbnail %}
+
+<!-- -->
+{% block content %}
+
+<main class="page-wrapper single-note">
+  <section class="section single-note-section">
+    <div class="section-header">
+      <h1 class="page-title">{{note.title}}</h1>
+      {% if note.excerpt %}
+      <p class="section-description">{{note.excerpt}}</p>
+      {% endif %}
+    </div>
+  </section>
+
+  {% if note.featured_image.url %}
+  <!-- -->
+  {% if note.featured_image.default_alt_text %}
+  <!-- -->
+  <img
+    src="{% thumbnail note.featured_image 800x400 crop upscale subject_location=note.featured_image.subject_location %}"
+    alt="{{note.featured_image.default_alt_text}}"
+  />
+  {% else %}
+  <img
+    src="{% thumbnail note.featured_image 800x400 crop upscale subject_location=note.featured_image.subject_location %}"
+    alt="{{note.title}} featured image"
+  />
+  {% endif %} {% endif %}
+
+  <hr />
+
+  <div class="single-note-content content">
+    {{note.content | markdown |safe }}
+  </div>
+
+  <section class="section single-note-after-content">
+    <div class="about-col">
+      <span>About me</span>
+      <div>
+        <p>
+          Soy <a href="{% url 'page' 'about' %}">Rafael Cosquiere</a>, y me
+          encanta todo lo relacionado con el desarrollo web, Python y Django
+          entre otros. Actualmente me dedico al marketing digital especializado
+          en SEO y en mi poco tiempo libre desarrollo esta web y otros
+          <a href="{% url 'projects' %}">proyectos</a>.
+        </p>
+        <p>Si te gusta el contenido no dudes en compartir o comentar.</p>
+      </div>
+    </div>
+    <div class="meta-col">
+      <div class="single-note-meta-box">
+        <span>Note Metadata</span>
+        <!-- for second version-->
+        <!-- <div class="word-count">Words: 500</div>
+        <div class="reading-time">Reading time: 5 min</div> -->
+        <div class="publish-date">Published: {{note.created_date}}</div>
+        <div class="update-date">Last updated: {{note.updated_date}}</div>
+        <div class="note-tags">
+          <span>Tags:</span>
+          <br />
+          <!-- -->
+          {% for tag in note.tags.all %}
+          <a href="{% url 'tag' tag.slug %}" class="note-tag">#{{tag.name}}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

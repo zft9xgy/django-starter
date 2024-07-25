@@ -1,0 +1,50 @@
+{% load static %}
+
+<div class="site-header-wrapper">
+  <header id="site-header" class="site-header">
+    <div class="logo"><a href="{% url 'home' %}">Keep it simple!</a></div>
+    <div class="theme-toggle mobile-only">
+      <svg aria-hidden="true" class="theme-icon-when-auto">
+        <use xlink:href="#icon-auto"></use>
+      </svg>
+      <svg aria-hidden="true" class="theme-icon-when-dark">
+        <use xlink:href="#icon-sun"></use>
+      </svg>
+      <svg aria-hidden="true" class="theme-icon-when-light">
+        <use xlink:href="#icon-moon"></use>
+      </svg>
+    </div>
+    <div class="navbar">
+      <div class="menu-item">
+        <a href="{% url 'notes' %}" class="nav-link">Notes</a>
+      </div>
+      <div class="menu-item">
+        <a href="{% url 'projects' %}" class="nav-link">Projects</a>
+      </div>
+      <div class="menu-item">
+        <a href="{% url 'tags' %}" class="nav-link">Tags</a>
+      </div>
+      <div class="menu-item">
+        <a href="{% url 'page' 'about' %}" class="nav-link">About</a>
+      </div>
+      <div class="menu-item">
+        <a href="{% url 'page' 'ideas' %}" class="nav-link">Ideas</a>
+      </div>
+      <div class="menu-item">
+        <a href="{% url 'page' 'now' %}" class="nav-link">Now</a>
+      </div>
+    </div>
+    <div class="theme-toggle desktop-only">
+      <svg aria-hidden="true" class="theme-icon-when-auto">
+        <use xlink:href="#icon-auto"></use>
+      </svg>
+      <svg aria-hidden="true" class="theme-icon-when-dark">
+        <use xlink:href="#icon-sun"></use>
+      </svg>
+      <svg aria-hidden="true" class="theme-icon-when-light">
+        <use xlink:href="#icon-moon"></use>
+      </svg>
+    </div>
+  </header>
+</div>
+<!-- Header End -->

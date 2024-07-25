@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %} {% load static %}
+
+<!-- -->
+{% block content %}
+
+<main class="page-wrapper page-projects">
+  <section class="projects-section section">
+    <div class="section-header">
+      <h1 class="page-title">Projects</h1>
+      <p class="section-description">
+        Here are some of my published projects, experiments and other project
+        attempts that may be of interest.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      {% for project in projects %}
+      <article class="project">
+        <div class="project-date">{{project.created_date|date:'M Y'}}</div>
+        <h3 class="project-title">{{project.title}}</h3>
+        <div class="project-short">{{project.short_description}}</div>
+        <div class="project-links">
+          {% if project.note_link %}
+          <a class="project-link button" href="{{project.note_link}}">Note</a>
+          {% endif %}
+          <!-- -->
+          {% if project.source_link %}
+          <a
+            target="_blank"
+            class="project-link button"
+            href="{{project.source_link}}"
+            >Source</a
+          >
+          {% endif %}
+          <!-- -->
+          {% if project.demo_link %}
+          <a
+            target="_blank"
+            class="project-link button"
+            href="{{project.demo_link}}"
+            >Demo</a
+          >
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}

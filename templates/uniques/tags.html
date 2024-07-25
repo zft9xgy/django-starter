@@ -1,0 +1,48 @@
+{% extends 'base/base.html' %} {% load static %}
+
+<!-- -->
+{% block content %}
+
+<main class="page-wrapper page-tags">
+  <section class="tags-section section">
+    <div class="section-header">
+      <h1 class="page-title">Tags</h1>
+      <p class="section-description">
+        I use tags to try to classify what I write, you can use them to explore
+        the content and get an idea of what it's about.
+      </p>
+    </div>
+
+    <!-- en., feb., mar., abr., may., jun., jul., ag. (agto.), set. (sept.), oct., nov., dic.» -->
+    <div class="tag-section">
+      <div class="section tags">
+        {% for tag in tags %}
+
+        <a class="tag" href="#{{tag.slug}}"
+          ><h3 class="tag-title">
+            <span class="hashtag">#</span>{{tag.name}}
+          </h3></a
+        >
+
+        {% endfor %}
+      </div>
+      {% for tag in tags %}
+      <h2 id="{{tag.slug}}" class="tag-title">
+        <span class="hashtag">#</span>{{tag.name}}
+      </h2>
+      <div class="tag-notes-list">
+        {% for note in tag.notes.all %}
+        <article class="note">
+          <a href="{% url 'note' note.slug %}" class="note-link">
+            <h3 class="note-title">{{note.title}}</h3>
+            <time class="note-date">{{note.created_date | date:'M d' }}</time>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #111111;
+
+    --color-bg-f5: #202020;
+    --color-bg-c3: #c3c3c3;
+    --color-accent: #fcd37a;
+    --color-accent-hover: #feda8b;
+    --color-font-primay: #fff;
+    --color-font-secondary: #dbdbdb;
+
+    --color-button-bg: #c3c3c3;
+    --color-button-bg-hover: #b5b5b5;
+  }
+}
+
+html[data-theme="dark"] {
+  --color-bg: #111111;
+
+  --color-bg-f5: #202020;
+  --color-bg-c3: #c3c3c3;
+  --color-accent: #fcd37a;
+  --color-accent-hover: #feda8b;
+  --color-font-primay: #fff;
+  --color-font-secondary: #dbdbdb;
+
+  --color-button-bg: #c3c3c3;
+  --color-button-bg-hover: #b5b5b5;
+}
+
+/* THEME SWITCH */
+.theme-toggle {
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+  margin-inline-start: 5px;
+  margin-top: -1px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+button.theme-toggle:hover,
+button.theme-toggle:active {
+  text-decoration: none;
+  border: none;
+}
+
+.theme-toggle svg {
+  height: 1rem;
+  width: 1rem;
+  display: none;
+}
+
+/*
+Fully hide screen reader text so we only show the one matching the current
+theme.
+*/
+.theme-toggle .visually-hidden {
+  display: none;
+}
+
+html[data-theme="auto"] .theme-toggle .theme-label-when-auto {
+  display: block;
+}
+
+html[data-theme="dark"] .theme-toggle .theme-label-when-dark {
+  display: block;
+}
+
+html[data-theme="light"] .theme-toggle .theme-label-when-light {
+  display: block;
+}
+
+/* ICONS */
+.theme-toggle svg.theme-icon-when-auto,
+.theme-toggle svg.theme-icon-when-dark,
+.theme-toggle svg.theme-icon-when-light {
+  fill: var(--color-font-primay);
+  color: var(--color-bg-f5);
+}
+
+html[data-theme="auto"] .theme-toggle svg.theme-icon-when-auto {
+  display: block;
+}
+
+html[data-theme="dark"] .theme-toggle svg.theme-icon-when-dark {
+  display: block;
+}
+
+html[data-theme="light"] .theme-toggle svg.theme-icon-when-light {
+  display: block;
+}
