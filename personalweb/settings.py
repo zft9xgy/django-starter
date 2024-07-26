@@ -124,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'en'
 TIME_ZONE = 'Europe/Madrid'
 USE_I18N = True
 USE_TZ = True
@@ -157,7 +157,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SITE_ID = 1
 DOMAIN = "dev.rafaelcosquiere.com"
-SITE_NAME = "rafaelcosquiere.com"
+SITE_NAME = "dev.rafaelcosquiere.com"
 
 # SEO SETTINGS BY DEFAULT
 
@@ -170,8 +170,8 @@ if set to false, cannot be overwritten downstream
 SEO_INDEX True will enable sitemaps and False disable sitemaps
 """
 
-SEO_INDEX = False    # Default value for <meta name="robots" content="index/noindex">
-SEO_FOLLOW = False   # Default value for <meta name="robots" content="follow/nofollow">
+SEO_INDEX = True    # Default value for <meta name="robots" content="index/noindex">
+SEO_FOLLOW = True   # Default value for <meta name="robots" content="follow/nofollow">
 
 
 # django filer
