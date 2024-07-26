@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.3]
+
+- [85b5967](https://github.com/zft9xgy/rafaelcosquiere.com/commit/85b59677335eb269470d4074d80b99cb013038f6) Refactor tags. Move tags into notes and unset Tags app
+- [c6b5b4c](https://github.com/zft9xgy/rafaelcosquiere.com/commit/c6b5b4c8e11485f9088c813c0ce9dc1e7468efd0) Add: get_tags return a list with tags that got notes only
+- [87b8447](https://github.com/zft9xgy/rafaelcosquiere.com/commit/87b8447a5ad48aa83a2dc50c1fa1d62402f25960) Fix: show only note published in tags view
+- [c535731](https://github.com/zft9xgy/rafaelcosquiere.com/commit/c5357312d88b4a56321cfc06f820f8629e16dcf9) Fix: show only note published in single tag view
+
 ## [0.1.1]
 
 ### Change
