@@ -5,7 +5,7 @@ from tags.models import Tag
 
 
 def tags(request):
-    tags = Tag.objects.all()
+    tags = Tag.get_tags()
 
     context = {
         'title':'Tags',
@@ -15,7 +15,7 @@ def tags(request):
 
 def tag(request,slug):
     tag = get_object_or_404(Tag,slug=slug)
-    tags = Tag.objects.all().exclude(id=tag.id)
+    tags = Tag.get_tags().exclude(id=tag.id)
 
     context = {
         'title':tag.name,

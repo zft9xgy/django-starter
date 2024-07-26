@@ -32,12 +32,16 @@
       </h2>
       <div class="tag-notes-list">
         {% for note in tag.notes.all %}
+        <!---->
+        {% if note.status == 'published' %}
         <article class="note">
           <a href="{% url 'note' note.slug %}" class="note-link">
             <h3 class="note-title">{{note.title}}</h3>
             <time class="note-date">{{note.created_date | date:'M d' }}</time>
           </a>
         </article>
+        {% endif %}
+        <!---->
         {% endfor %}
       </div>
       {% endfor %}
