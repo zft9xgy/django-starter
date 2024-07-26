@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404
-from notes.models import Note
+from notes.models import Note, Tag
 from projects.models import Project
-from tags.models import Tag
 
 
 def tags(request):

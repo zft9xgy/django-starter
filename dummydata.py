@@ -9,7 +9,7 @@ django.setup()
 
 from django.contrib.auth.models import User
 from notes.models import Note
-from tags.models import Tag
+from notes.models import Tag
 from projects.models import Project
 from pages.models import Page
 

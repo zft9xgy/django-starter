@@ -14,9 +14,11 @@ urlpatterns = [
   
     # include
     path('notes/',include('notes.urls')),
+    path('tags/',include('notes.tags.urls')),
+
     path('projects/',include('projects.urls')),
-    path('tags/',include('tags.urls')),
     path('pages/',include('pages.urls')),
+    
     re_path(r'^filer/', include('filer.urls')),
 
     #django filer

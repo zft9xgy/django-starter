@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     # own 
     'notes.apps.NotesConfig',
     'projects.apps.ProjectsConfig',
-    'tags.apps.TagsConfig',
     'pages.apps.PagesConfig',
 
     # third party
