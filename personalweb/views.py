@@ -9,7 +9,7 @@ from personalweb.settings import DOMAIN
 
 def home(request):
     notes = Note.objects.filter(status='published')[:5]
-    tags = Tag.objects.all()[:6]
+    tags = Tag.get_tags()
     projects = Project.objects.all()[:3]
 
     context = {
