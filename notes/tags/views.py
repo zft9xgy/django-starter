@@ -3,8 +3,12 @@ from notes.models import Note, Tag
 from projects.models import Project
 
 
+
 def tags(request):
-    tags = Tag.objects.all()
+    #tags = Tag.objects.all()
+
+    tags = Tag.get_tags()
+
 
     context = {
         'title':'Tags',

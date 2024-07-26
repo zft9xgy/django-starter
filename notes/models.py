@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 import uuid
 from django_prose_editor.sanitized import SanitizedProseEditorField
 from filer.fields.image import FilerImageField
+from django.db.models import Count, Q
 
 
 class Tag(models.Model):
@@ -11,6 +12,23 @@ class Tag(models.Model):
                           primary_key=True, editable=False)
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
+
+    @staticmethod
+    def get_tags(number_of_tags : int = None) -> list:
+        """
+        Devuelve una lista de etiquetas (tags) que tengan Notas asociadas a ellas. 
+        Por defecto, devuelve todas las etiquetas disponibles que tenga al menos una Nota.
+
+        Args:
+        number_of_tags (int): El número de etiquetas a devolver.
+
+        Returns:
+        list: Una lista de etiquetas.
+        """
+        tags = Tag.objects.annotate(note_count=Count('notes')).filter(Q(note_count__gt=0)).order_by('-note_count')
+        if number_of_tags:
+            return tags[:number_of_tags]
+        return tags
     
     def __str__(self):
         return self.name
