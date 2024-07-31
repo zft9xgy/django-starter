@@ -5,6 +5,9 @@ import uuid
 from django_prose_editor.sanitized import SanitizedProseEditorField
 from filer.fields.image import FilerImageField
 from django.db.models import Count, Q
+from django.utils.text import slugify
+from django.db import IntegrityError, transaction
+
 
 
 class Tag(models.Model):
@@ -12,6 +15,12 @@ class Tag(models.Model):
                           primary_key=True, editable=False)
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
+
+    def save(self, *args, **kwargs):
+        print('pk:',self.pk)
+        # todo: check colision with others URLs
+        self.slug = slugify(self.slug)
+        super(Tag, self).save(*args, **kwargs)
 
     @staticmethod
     def get_tags(number_of_tags : int = None) -> list:
@@ -49,6 +58,11 @@ class Note(models.Model):
     tags = models.ManyToManyField(Tag, related_name='notes',blank=True)
     created_date = models.DateTimeField(default=now,editable=True)
     updated_date = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        # todo: check colision with others URLs
+        self.slug = slugify(self.slug)
+        super(Note, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['-created_date']
