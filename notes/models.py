@@ -17,7 +17,6 @@ class Tag(models.Model):
     slug = models.SlugField(unique=True)
 
     def save(self, *args, **kwargs):
-        print('pk:',self.pk)
         # todo: check colision with others URLs
         self.slug = slugify(self.slug)
         super(Tag, self).save(*args, **kwargs)
