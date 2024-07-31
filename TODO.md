@@ -15,6 +15,8 @@
 ### bugs
 
 - bug: seosettings must be applie to robots.txt file
+- bug: tags are being indexing. this is not intenden. handle this by set noindex to tags or control this feature.
+- bug: slug are case sensitive and throw 404 if not accessing correctly. url must be slugify / sanitice after save on db.
 
 ## maybes and ideas
 
