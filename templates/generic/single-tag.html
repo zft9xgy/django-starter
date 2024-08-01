@@ -27,6 +27,7 @@
       </div>
     </div>
     <div class="other-tags">
+      {% if tags %}
       <h2>Other tags</h2>
       <div class="tags">
         {% for t in tags %}
@@ -37,6 +38,8 @@
         >
 
         {% endfor %}
+        <!---->
+        {% endif %}
       </div>
     </div>
   </section>

@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+(At least I'm trying)
+
+## [0.5.12]
+
+[a7fa1f2](https://github.com/zft9xgy/rafaelcosquiere.com/commit/a7fa1f2) | [ced4f03] |[bcb5df3](https://github.com/zft9xgy/rafaelcosquiere.com/commit/bcb5df3)(https://github.com/zft9xgy/rafaelcosquiere.com/commit/ced4f03) | [3ce17e3](https://github.com/zft9xgy/rafaelcosquiere.com/commit/3ce17e3) Add:Slugify validator added to Tag and Note
+
+[b8bd03f](https://github.com/zft9xgy/rafaelcosquiere.com/commit/b8bd03f) Edit: TODO.md
+[b01d7d2](https://github.com/zft9xgy/rafaelcosquiere.com/commit/b01d7d2) Fix: Change home page
+[ed71331](https://github.com/zft9xgy/rafaelcosquiere.com/commit/ed71331) Feat:Open the website to the search engines
+[f659622](https://github.com/zft9xgy/rafaelcosquiere.com/commit/f659622) Fix: tags views
+[cb8347c](https://github.com/zft9xgy/rafaelcosquiere.com/commit/cb8347c) Fix: tags views
+[ed14f76](https://github.com/zft9xgy/rafaelcosquiere.com/commit/ed14f76) Fix: sitemap url and add control on crawl base on seo index settings
+[5e8bc02](https://github.com/zft9xgy/rafaelcosquiere.com/commit/5e8bc02) Edit: Changelogs
+[c535731](https://github.com/zft9xgy/rafaelcosquiere.com/commit/c535731) Fix: show only note published in single tag view
+[87b8447](https://github.com/zft9xgy/rafaelcosquiere.com/commit/87b8447) Fix: show only note published in tags view
+[c6b5b4c](https://github.com/zft9xgy/rafaelcosquiere.com/commit/c6b5b4c) Add: get_tags return a list with tags that got notes only
+
 ## [0.3.3]
 
 - [85b5967](https://github.com/zft9xgy/rafaelcosquiere.com/commit/85b59677335eb269470d4074d80b99cb013038f6) Refactor tags. Move tags into notes and unset Tags app
