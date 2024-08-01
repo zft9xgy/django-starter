@@ -1,12 +1,12 @@
+import uuid
 from django.db import models
 from django.utils.timezone import now
 from django.contrib.auth.models import User
-import uuid
 from django_prose_editor.sanitized import SanitizedProseEditorField
 from filer.fields.image import FilerImageField
 from django.db.models import Count, Q
 from django.utils.text import slugify
-from django.db import IntegrityError, transaction
+from notes.validators import validate_slugify
 
 
 
@@ -14,10 +14,9 @@ class Tag(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
     name = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True,validators=[validate_slugify])
 
     def save(self, *args, **kwargs):
-        # todo: check colision with others URLs
         self.slug = slugify(self.slug)
         super(Tag, self).save(*args, **kwargs)
 
@@ -49,7 +48,7 @@ class Note(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True,
                           primary_key=True, editable=False)
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True,validators=[validate_slugify])
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
     excerpt = models.CharField(max_length=255,blank=True,null=True)
     content = models.TextField(blank=True,null=True)

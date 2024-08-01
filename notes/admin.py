@@ -1,6 +1,7 @@
 from django.contrib import admin
 from notes.models import Note, Tag, SeoMeta
 from django.contrib.admin.options import TabularInline
+from notes.forms import TagFormAdmin
 
 
 
@@ -19,6 +20,7 @@ class NoteAdmin(admin.ModelAdmin):
 
 class TagAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
+    form = TagFormAdmin
 
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Note, NoteAdmin)
