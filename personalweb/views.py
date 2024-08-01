@@ -4,13 +4,13 @@ from projects.models import Project
 from django.http import HttpResponse
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
-from personalweb.settings import DOMAIN
+from personalweb.settings import DOMAIN, SEO_INDEX
 
 
 def home(request):
     notes = Note.objects.filter(status='published')[:5]
     tags = Tag.get_tags()
-    projects = Project.objects.all()[:3]
+    projects = Project.objects.all()[:4]
 
     context = {
         'notes': notes,
@@ -21,7 +21,13 @@ def home(request):
 
 
 def robots(request):
-    return render(request, "txts/robots.txt", context={'domain_url':DOMAIN}, content_type="text/plain")
+
+    context={
+        'domain_url':DOMAIN,
+        'index': SEO_INDEX,
+    }
+
+    return render(request, "txts/robots.txt", context, content_type="text/plain")
 
 
 def handler404(request, *args, **argv):

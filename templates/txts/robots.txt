@@ -1,5 +1,13 @@
+{% if index %}
+User-agent: *
+Allow: /
+{% else %}
 User-agent: *
 Disallow: /
+{% endif %}
 Disallow: /admin/
 Disallow: /static/
-Sitemap: {{ domain_url }}/sitemap.txt
+
+{% if index %}
+Sitemap: https://{{ domain_url }}/sitemap.xml
+{% endif %}

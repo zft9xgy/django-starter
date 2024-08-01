@@ -14,7 +14,6 @@ def notes(request):
         
     years ={ note.created_date.year for note in notes }
     years = sorted(years,reverse=True)
-    print(years)
 
     context = {
         'title': 'Notes',
