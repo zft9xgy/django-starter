@@ -742,12 +742,12 @@ caption {
 }
 
 ::-moz-selection { /* Code for Firefox */
-  color: var(--color-font-primay);
+  color: var(--color-bg);
   background: var(--color-accent);
 }
 
 ::selection {
-  color: var(--color-font-primay);
+  color: var(--color-bg);
   background: var(--color-accent);
 }
 
