@@ -209,15 +209,16 @@ blockquote cite {
 }
 
 pre {
-  border: 0;
-  border-radius: 4px;
-  background: transparent;
+  border-radius: var(--border-radius-default);
+  background: var(--color-bg-f5);
   padding: 1rem;
   tab-size: 2;
   color: var(--color-font-primay);
   font-family: var(--font-family-monospace);
   font-size: 0.9rem;
   margin: 0 0 1.5rem 0;
+  border: 1px solid var(--color-bg-c3);
+  overflow: scroll;
 }
 
 pre code {
@@ -738,6 +739,16 @@ caption {
 
 .contain-table {
   overflow-x: auto;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: var(--color-font-primay);
+  background: var(--color-accent);
+}
+
+::selection {
+  color: var(--color-font-primay);
+  background: var(--color-accent);
 }
 
 @media (min-width: 600px) {
