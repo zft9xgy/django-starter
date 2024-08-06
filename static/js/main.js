@@ -1,6 +1,6 @@
 'use strict';
 {
-    window.addEventListener('load', function(e) {
+    window.addEventListener('load', function (e) {
 
         function setTheme(mode) {
             if (mode !== "light" && mode !== "dark" && mode !== "auto") {
@@ -15,25 +15,29 @@
             const currentTheme = localStorage.getItem("theme") || "auto";
             const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+            let newTheme;
             if (prefersDark) {
                 // Auto (dark) -> Light -> Dark
                 if (currentTheme === "auto") {
-                    setTheme("light");
+                    newTheme = "light";
                 } else if (currentTheme === "light") {
-                    setTheme("dark");
+                    newTheme = "dark";
                 } else {
-                    setTheme("auto");
+                    newTheme = "auto";
                 }
             } else {
                 // Auto (light) -> Dark -> Light
                 if (currentTheme === "auto") {
-                    setTheme("dark");
+                    newTheme = "dark";
                 } else if (currentTheme === "dark") {
-                    setTheme("light");
+                    newTheme = "light";
                 } else {
-                    setTheme("auto");
+                    newTheme = "auto";
                 }
             }
+            setTheme(newTheme);
+            // after cycle theme change utterance comments style
+            utterancesTheme(newTheme);
         }
 
         function initTheme() {
@@ -53,4 +57,23 @@
 
         setupTheme();
     });
+
+    function utterancesTheme(theme) {
+        if (document.querySelector('.utterances-frame')) {
+            let utterancesTheme;
+            if (theme === 'auto') {
+                utterancesTheme = 'preferred-color-scheme';
+            } else if (theme === 'dark') {
+                utterancesTheme = 'github-dark';
+            } else {
+                utterancesTheme = 'github-light';
+            }
+            const message = {
+                type: 'set-theme',
+                theme: utterancesTheme
+            };
+            const iframe = document.querySelector('.utterances-frame');
+            iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+        }
+    }
 }
