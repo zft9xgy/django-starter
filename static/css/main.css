@@ -405,14 +405,6 @@ h2.tag-title {
 
 /* comments section */
 
-.utterances {
-  min-width: 100%;
-}
-
-.utterances-frame {
-  padding: 0;
-}
-
 @media only screen and (max-width: 600px) {
   p {
     font-size: 1.2rem;
