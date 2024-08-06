@@ -89,8 +89,15 @@ WSGI_APPLICATION = 'personalweb.wsgi.application'
 
 
 if PRODUCTION:
+    # postgres configuration
+    # DATABASES = {
+    # "default": dj_database_url.parse(os.environ.get("DJANGO_DB_URI"))
+    # }
     DATABASES = {
-    "default": dj_database_url.parse(os.environ.get("DJANGO_DB_URI"))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "database/rcdb.sqlite3",
+    }
     }
 else:
     DATABASES = {
@@ -99,6 +106,7 @@ else:
         'NAME': BASE_DIR / "db.sqlite3",
     }
     }
+
 
 
 # Password validation
