@@ -1,4 +1,4 @@
-{% if index %}
+{% if seoindex %}
 User-agent: *
 Allow: /
 {% else %}
@@ -8,6 +8,6 @@ Disallow: /
 Disallow: /admin/
 Disallow: /static/
 
-{% if index %}
+{% if seoindex %}
 Sitemap: https://{{ domain_url }}/sitemap.xml
 {% endif %}

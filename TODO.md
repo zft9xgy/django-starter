@@ -30,6 +30,7 @@
 
 ## done
 
+- bug: seosettings must be applie to robots.txt file.
 - editor backend de textos md (finalmente se uso un preprocesador de markdown)
 - estructura completa: Projects, Tags, Notes, Pages
 - sitemap.xml (https://docs.djangoproject.com/en/5.0/ref/contrib/sitemaps/) / (https://christophergs.com/blog/django-sitemap-tutorial-for-humans)

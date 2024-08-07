@@ -24,7 +24,7 @@ def robots(request):
 
     context={
         'domain_url':DOMAIN,
-        'index': SEO_INDEX,
+        'seoindex': SEO_INDEX,
     }
 
     return render(request, "txts/robots.txt", context, content_type="text/plain")
