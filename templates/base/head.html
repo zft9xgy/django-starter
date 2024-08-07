@@ -1,34 +1,37 @@
 {% load static %}
 <head>
   <meta charset="utf-8" />
+  
   {% if global.seo_index %}
-  <!---->
   {% if seometa.index == False %}
   <meta name="robots" content="noindex" />
   {% else %}
   <meta name="robots" content="index" />
   {% endif %}
-  <!---->
   {% else %}
-  <!-- noindex default -->
   <meta name="robots" content="noindex" />
   {% endif %}
-  <!-- meta follow-->
+
   {% if global.seo_follow == True %}
-  <!---->
   {% if seometa.follow == False %}
   <meta name="robots" content="nofollow" />
   {% else %}
   <meta name="robots" content="follow" />
   {% endif %}
-  <!---->
   {% else %}
   <meta name="robots" content="nofollow" />
   {% endif %}
 
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f5" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#202020" />
-
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: light)"
+    content="#f5f5f5"
+  />
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: dark)"
+    content="#202020"
+  />
 
   <!-- title -->
   <title>{{title|default:'Keep it simple!'}}</title>
@@ -48,10 +51,18 @@
     ================================================== -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap">
-</noscript>
+  <link
+    rel="preload"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+    />
+  </noscript>
 
   <!-- CSS
     ================================================== -->

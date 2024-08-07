@@ -14,7 +14,6 @@
 
 ### bugs
 
-- bug: seosettings must be applie to robots.txt file
 - bug: tags are being indexing. this is not intenden. handle this by set noindex to tags or control this feature.
 - bug: slug are case sensitive and throw 404 if not accessing correctly. url must be slugify / sanitice after save on db.
 
@@ -26,7 +25,7 @@
 - implement slugify to slug field -
 - sitemaps 2.0 - splits the sitemaps into differents files like: notes_sitemap.xml , pages_sitemap.xml
 - build a redirections modules to create redirections
-- refactor the whole project to create a super 'webcontent' object
+- refactor the whole project to create a super 'webcontent' object ??
 
 ## done
 
