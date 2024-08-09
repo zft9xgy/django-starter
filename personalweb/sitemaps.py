@@ -9,6 +9,7 @@ from django.db.models import Q
 class NotesSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
+    protocol = "https"
 
     def items(self):
     # Obtener todas las notas publicadas con seo.index = True o sin relación SeoMeta
@@ -27,6 +28,7 @@ class NotesSitemap(Sitemap):
 class PagesSitemap(Sitemap):
     changefreq = "monthly"
     priority = 0.8
+    protocol = "https"
 
     def items(self):
         pages = Page.objects.filter(
@@ -43,6 +45,7 @@ class PagesSitemap(Sitemap):
 
 class StaticViewSitemap(sitemaps.Sitemap):
     priority = 1.0
+    protocol = "https"
     changefreq = "daily"
 
     def items(self):
