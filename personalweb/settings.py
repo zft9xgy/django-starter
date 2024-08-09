@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'notes.apps.NotesConfig',
     'projects.apps.ProjectsConfig',
     'pages.apps.PagesConfig',
+    'users.apps.UsersConfig',
 
     # third party
     'easy_thumbnails',
@@ -191,3 +192,7 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
+
+# Custom user managers
+
+AUTH_USER_MODEL = "users.AppUser"
