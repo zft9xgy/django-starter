@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+<!-- muy importante mantener el formato en jinga o da problemas de renderizado la plantilla -->
+<main class="page-wrapper">
+  <div class="auth">
+    <div class="card">
+      <div class="auth__header text-center">
+        <h3>Account Login</h3>
+        <p>Hello Developer, Welcome Back!</p>
+      </div>
+
+      <form action="" method="POST" class="user-form login-form">
+        {% csrf_token %}
+        <div class="form__field">
+          <label for="formInput#email">Email: </label>
+          <input
+            class="input input--text"
+            id="formInput#text"
+            type="email"
+            name="email"
+            placeholder="Enter your email..."
+          />
+        </div>
+
+        <!-- Input:Password -->
+        <div class="form__field">
+          <label for="formInput#password">Password: </label>
+          <input
+            class="input input--password"
+            id="formInput#passowrd"
+            type="password"
+            name="password"
+            placeholder="••••••••"
+          />
+        </div>
+
+        <div class="auth__actions">
+          <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
+          <a href="#">Forget Password?</a>
+        </div>
+      </form>
+
+      <div class="auth__alternative">
+        <p>Don’t have an Account?</p>
+        <a href="{% url 'user-register' %}">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
