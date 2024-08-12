@@ -2,17 +2,21 @@ from pathlib import Path, os
 import sys
 import dj_database_url
 from django.core.management.utils import get_random_secret_key
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+ENV_DIR=os.path.join(BASE_DIR, '.env')
 
-PRODUCTION = os.getenv("DJANGO_PRODUCTION",False)
+load_dotenv(ENV_DIR)
+
+PRODUCTION = (os.environ.get("MY_ENV_FILE") == "True")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
 
 if PRODUCTION:  
     ALLOWED_HOSTS = ['dev.rafaelcosquiere.com']
@@ -23,6 +27,7 @@ if PRODUCTION:
 else:
     ALLOWED_HOSTS = ['localhost','127.0.0.1','192.168.1.113']
     DEBUG = True
+
 
 
 # Application definition
@@ -90,10 +95,6 @@ WSGI_APPLICATION = 'personalweb.wsgi.application'
 
 
 if PRODUCTION:
-    # postgres configuration
-    # DATABASES = {
-    # "default": dj_database_url.parse(os.environ.get("DJANGO_DB_URI"))
-    # }
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -196,3 +197,12 @@ THUMBNAIL_PROCESSORS = (
 # Custom user managers
 
 AUTH_USER_MODEL = "users.AppUser"
+
+# Password reset email
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.hostinger.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get("DJANGO_EMAIL_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("DJANGO_EMAIL_PASS")
+DEFAULT_FROM_EMAIL = os.environ.get("DJANGO_EMAIL_USER")
