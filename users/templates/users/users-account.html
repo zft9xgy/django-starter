@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %} {% load static %} {% block content %}
+<!-- muy importante mantener el formato en jinga o da problemas de renderizado la plantilla -->
+<main class="page-wrapper">
+  <h2>My Account</h2>
+  <p>
+    Thanks for joining my newsletter list. Here you can find your preferences
+    and be able to unsuscribe, delete your account, change your password or
+    delete your account.
+  </p>
+
+   
+    <div>Email: {{user.email}}</div>
+    <div>Date joined: {{user.date_joined}}</div>
+    <div>Is active?: {{user.is_active}}</div>
+
+</main>
+{% endblock %}

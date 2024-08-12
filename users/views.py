@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from users.forms import AppUserPublicForm, AppUserPublicRegisterForm
+from users.models import AppUser
 
 # Create your views here.
 
@@ -50,3 +51,13 @@ def userRegister(request):
 def userLogout(request):
     logout(request)
     return redirect('/')
+
+
+@login_required(login_url='user-login')
+def userAccount(request):
+    user = get_object_or_404(AppUser,email=request.user.email)
+
+    context = {
+        'user':user,
+    }
+    return render(request, 'users/users-account.html', context)
