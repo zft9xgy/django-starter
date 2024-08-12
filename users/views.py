@@ -39,7 +39,7 @@ def userRegister(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')  # Redirige a la página de inicio u otra página después del registro
+            return redirect('home') 
     else:
         form = AppUserPublicRegisterForm()
     
@@ -61,3 +61,15 @@ def userAccount(request):
         'user':user,
     }
     return render(request, 'users/users-account.html', context)
+
+@login_required(login_url='user-login')
+def userDelete(request):
+    user = get_object_or_404(AppUser,email=request.user.email)
+    if request.method == 'GET':
+        return render(request, 'users/users-delete-account-confirmation.html', {'user':user})
+
+    if request.method == 'POST':
+        user.delete()
+        #todo send user confirmation by email after delete.
+        return redirect('home')
+    

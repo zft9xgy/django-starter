@@ -8,10 +8,13 @@
     delete your account.
   </p>
 
-   
-    <div>Email: {{user.email}}</div>
-    <div>Date joined: {{user.date_joined}}</div>
-    <div>Is active?: {{user.is_active}}</div>
-
+  <div>Email: {{user.email}}</div>
+  <div>Date joined: {{user.date_joined}}</div>
+  <div>Is active?: {{user.is_active}}</div>
+  <hr />
+  <div>
+    Do you want to delete your account?
+    <a href="{% url 'user-delete' %}">Delete me account</a>
+  </div>
 </main>
 {% endblock %}
