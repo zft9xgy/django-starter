@@ -1,10 +1,10 @@
-Hola, Recibiste este correo electrónico porque solicitaste un restablecimiento de contraseña para tu cuenta en {{ protocol }}://{{ site_name }}. 
+Hi, you received this email because you requested a password reset for your account at {{ protocol }}://{{ site_name }}. 
 
-Por favor, haz clic en el siguiente enlace para establecer una nueva contraseña: 
+Please click on the link below to set a new password: 
 {{ protocol }}://{{domain }}{% url 'password_reset_confirm' uidb64=uid token=token %} 
 
-Si no solicitaste este cambio, puedes ignorar este correo electrónico. 
+If you did not request this change, you can ignore this email. 
 
-Gracias por usar nuestro sitio web. 
+Thank you for using our website. 
 
-El equipo de {{ site_name }}
+The team of {{ site_name }}

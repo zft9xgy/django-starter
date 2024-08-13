@@ -24,7 +24,6 @@ def userLogin(request):
             # No backend authenticated the credentials
             messages.warning(request, 'Wrong credentials. Either password or email are incorrect.')
 
-
     return render(request,'users/users-login.html')
 
 
