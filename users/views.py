@@ -22,8 +22,8 @@ def userLogin(request):
             return redirect(nextUrl)
         else:
             # No backend authenticated the credentials
-            # implement some type of warning here
-            messages.warning(request, 'Wrong credentials.')
+            messages.warning(request, 'Wrong credentials. Either password or email are incorrect.')
+
 
     return render(request,'users/users-login.html')
 

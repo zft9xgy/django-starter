@@ -34,18 +34,16 @@
         </div>
 
         <div class="auth__actions">
-          <input class="btn btn--sub btn--lg" type="submit" value="Log In" />
-          <a href="#">Forget Password?</a>
+          <input type="submit" value="Log In" />
         </div>
       </form>
 
       <div class="auth__alternative">
-        <p>Don’t have an Account?</p>
-        <a href="{% url 'user-register' %}">Sign Up</a>
-      </div>
-      <div class="auth__alternative">
-        <p>Forgot password?</p>
-        <a href="{% url 'password_reset' %}">Reset password</a>
+        <p>
+          Don’t have an account already?
+          <a class="button" href="{% url 'user-register' %}">Sign Up</a>
+        </p>
+        <a href="{% url 'password_reset' %}">Forgot password?</a>
       </div>
     </div>
   </div>

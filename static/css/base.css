@@ -49,6 +49,12 @@ html[data-theme="light"],
   --color-form-input-error: #d33c40;
   --color-form-input-error-shadow: #f4cecf;
   --border-radius-default: 10px;
+
+  --color-message-debug: #20213b;
+  --color-message-info: #44aaee;
+  --color-message-success: #ccff33;
+  --color-message-warning: #ffcc55;
+  --color-message-error: #ff3366;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -65,6 +71,12 @@ html[data-theme="light"],
 
     --color-button-bg: #c3c3c3;
     --color-button-bg-hover: #b5b5b5;
+
+    --color-message-debug: #b8b9d3;
+    --color-message-info: #66ccee;
+    --color-message-success: #99ff33;
+    --color-message-warning: #ffaa33;
+    --color-message-error: #ff6699;
   }
 }
 
@@ -420,7 +432,6 @@ button,
   display: inline-block;
   border: 1px solid var(--color-button-bg);
   border-radius: var(--border-radius-default);
-  /* background: #0366ee; */
   color: var(--color-font-primay);
   font-weight: 400;
   font-family: var(--font-family-base);
@@ -432,6 +443,10 @@ button,
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
+}
+
+[type="submit"] {
+  background: var(--color-bg-f5);
 }
 
 .button:hover,
@@ -552,6 +567,7 @@ textarea {
   width: 100%;
   max-width: 100%;
   line-height: 1;
+  color: var(--color-font-primay);
 }
 
 [type="color"]:hover,
@@ -741,7 +757,8 @@ caption {
   overflow-x: auto;
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: var(--color-bg);
   background: var(--color-accent);
 }
