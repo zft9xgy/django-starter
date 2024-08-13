@@ -8,6 +8,10 @@
     delete your account.
   </p>
 
+  <div>
+    <a href="{% url 'user-logout' %}"><button>Logout</button></a>
+  </div>
+
   <div>Email: {{user.email}}</div>
   <div>Date joined: {{user.date_joined}}</div>
   <div>Is active?: {{user.is_active}}</div>

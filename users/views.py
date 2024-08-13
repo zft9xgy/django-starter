@@ -3,8 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from users.forms import AppUserPublicForm, AppUserPublicRegisterForm
 from users.models import AppUser
-
-# Create your views here.
+from django.contrib import messages
 
 
 
@@ -24,7 +23,7 @@ def userLogin(request):
         else:
             # No backend authenticated the credentials
             # implement some type of warning here
-            pass
+            messages.warning(request, 'Wrong credentials.')
 
     return render(request,'users/users-login.html')
 
