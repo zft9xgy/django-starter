@@ -9,14 +9,22 @@
   </p>
 
   <div>
-    <a class="button" href="{% url 'user-logout' %}">Logout</a>
+    <ul>
+      <li>Email: {{user.email}}</li>
+      <li>Date joined: {{user.date_joined}}</li>
+      <li>Is active?: {{user.is_active}}</li>
+    </ul>
   </div>
 
-  <div>Email: {{user.email}}</div>
-  <div>Date joined: {{user.date_joined}}</div>
-  <div>Is active?: {{user.is_active}}</div>
+  <div>
+    <h2>Control</h2>
+    <a class="button" href="{% url 'user-logout' %}">Logout</a>
+    <a class="button" href="{% url 'password_reset' %}">Reset password</a>
+  </div>
+
   <hr />
   <div>
+    <h2>Danger zone</h2>
     Do you want to delete your account?
     <a href="{% url 'user-delete' %}">Delete me account</a>
   </div>

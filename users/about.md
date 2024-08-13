@@ -11,16 +11,16 @@ Ok, user model is done now.
 
 Now, lets build the registration.
 
-- user can register
-- user can login
-- usar can acces a my account page to view and edit his data
+- user can register - tes
+- user can login - tes
+- usar can acces a my account page to view and edit his data - yes
 
 ideal:
 
 - user receive a email to active his account and after receive the email the profile is active.
-- user can reset his password
-- let user recover his password if he doesnt remember
-- user can delete his profile from my acocunt
+- user can reset his password - yes
+- let user recover his password if he doesnt remember - yes
+- user can delete his profile from my acocunt - yes
 - usar can change his email
 
 templates
