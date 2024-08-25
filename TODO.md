@@ -7,7 +7,6 @@
 ### feat
 
 - feat: una manera de añadir de forma automatica las pages que se crean en menu de footer o del header
-- feat: sección de comentarios opcional en cada nota, posiblemente con api de github
 - feat: añadir readtime and words count en metadata de notas
 - feat: página web multilingüe
 - feat: canonical on seometa settings
@@ -39,6 +38,7 @@
 - control sobre el seo metatitle and description og:titles etc https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag?hl=es
 - cambiar los favicons
 - gestion de media (django-filer)
+- feat: sección de comentarios opcional en cada nota, posiblemente con api de github
 
 ## references
 

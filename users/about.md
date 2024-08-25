@@ -1,6 +1,6 @@
 The main reason for this app is to create a custom user model.
 
-Il follow this as a star point:https://testdriven.io/blog/django-custom-user-model/
+I follow this as a start point:https://testdriven.io/blog/django-custom-user-model/
 
 - use email as a main identifier - done
 - let user got his own profile page - done
