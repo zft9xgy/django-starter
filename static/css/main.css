@@ -403,6 +403,40 @@ h2.tag-title {
   display: inherit;
 }
 
+/* django message */
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.messages .message {
+  width: var(--main-width);
+  text-align: center;
+  padding: 3rem;
+  margin: 1rem;
+  border-radius: var(--border-radius-default);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.message-debug {
+  background-color: var(--color-message-info);
+}
+.message-info {
+  background-color: var(--color-message-info);
+}
+.message-success {
+  background-color: var(--color-message-success);
+}
+.message-warning {
+  background-color: var(--color-message-warning);
+}
+.message-error {
+  background-color: var(--color-message-error);
+}
+
 /* comments section */
 
 @media only screen and (max-width: 600px) {
