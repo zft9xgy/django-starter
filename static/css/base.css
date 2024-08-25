@@ -768,6 +768,16 @@ caption {
   background: var(--color-accent);
 }
 
+/* forms */
+
+.w500 {
+  max-width: 500px;
+}
+
+.x-center {
+  margin: auto;
+}
+
 @media (min-width: 600px) {
   .contain-table {
     width: 100%;

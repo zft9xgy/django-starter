@@ -1,14 +1,14 @@
 {% extends 'base/base.html' %} {% load static %} {% block content %}
 <!-- muy importante mantener el formato en jinga o da problemas de renderizado la plantilla -->
 <main class="page-wrapper">
-  <div class="auth">
+  <div class="w500 x-center">
     <div class="card">
       <div class="auth__header text-center">
         <h3>Account Login</h3>
         <p>Hello Developer, Welcome Back!</p>
       </div>
 
-      <form action="" method="POST" class="user-form login-form">
+      <form action="" method="POST" class="user-form login-form w600">
         {% csrf_token %}
         <div class="form__field">
           <label for="formInput#email">Email: </label>

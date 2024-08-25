@@ -1,18 +1,14 @@
 {% extends 'base/base.html' %} {% load static %} {% block content %}
 <!-- muy importante mantener el formato en jinga o da problemas de renderizado la plantilla -->
 <main class="page-wrapper">
-  <div class="auth">
+  <div class="w500 x-center">
     <div class="card">
       <div class="auth__header text-center">
         <h3>Register an Account</h3>
         <p>Create a new developer account</p>
       </div>
 
-      <form
-        method="POST"
-        action="{% url 'user-register' %}"
-        class="form auth__form"
-      >
+      <form method="POST" action="{% url 'user-register' %}">
         {% csrf_token %} {% for field in form %}
         <div class="form__field">
           <label for="formInput#text">{{field.label}}</label>

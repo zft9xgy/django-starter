@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %} {% load static %} {% block content %}
 <main class="page-wrapper">
-  <form class="form" action="" method="POST">
+  <form class="form w500 x-center" action="" method="POST">
     {% csrf_token %}
     <p>Are you sure you want to delete your account: ({{user}})?</p>
     <p>This is permanent and cannot be undone.</p>
