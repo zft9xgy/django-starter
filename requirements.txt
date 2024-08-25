@@ -6,6 +6,7 @@ Django==5.0.6
 django-filer==3.1.4
 django-polymorphic==3.1.0
 django-prose-editor==0.5.1
+django-websettings==0.1
 djangorestframework==3.15.2
 easy-thumbnails==2.8.5
 gunicorn==22.0.0
@@ -15,6 +16,7 @@ nh3==0.2.18
 packaging==24.1
 pillow==10.3.0
 psycopg2-binary==2.9.9
+python-dotenv==1.0.1
 pytz==2024.1
 reportlab==4.2.2
 setuptools==71.1.0
