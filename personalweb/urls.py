@@ -18,6 +18,8 @@ urlpatterns = [
 
     path('projects/',include('projects.urls')),
     path('pages/',include('pages.urls')),
+    path('users/',include('users.urls')),
+    
     
     re_path(r'^filer/', include('filer.urls')),
 

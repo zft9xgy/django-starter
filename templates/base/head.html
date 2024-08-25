@@ -1,23 +1,23 @@
 {% load static %}
 <head>
   <meta charset="utf-8" />
-  
-  {% if global.seo_index %}
-  {% if seometa.index == False %}
+
+  {% if global.seo_index %} {% if seometa.index == False %}
   <meta name="robots" content="noindex" />
   {% else %}
   <meta name="robots" content="index" />
   {% endif %}
+  <!---->
   {% else %}
   <meta name="robots" content="noindex" />
   {% endif %}
-
-  {% if global.seo_follow == True %}
-  {% if seometa.follow == False %}
+  <!---->
+  {% if global.seo_follow == True %} {% if seometa.follow == False %}
   <meta name="robots" content="nofollow" />
   {% else %}
   <meta name="robots" content="follow" />
   {% endif %}
+  <!---->
   {% else %}
   <meta name="robots" content="nofollow" />
   {% endif %}
@@ -74,7 +74,14 @@
   <!-- script
     ================================================== -->
   <script defer src="{% static 'js/main.js' %}"></script>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="23b4cf49-0da1-4722-980d-672e1109ca39"></script>
+
+  {% if debug %}
+  <script
+    defer
+    src="https://cloud.umami.is/script.js"
+    data-website-id="23b4cf49-0da1-4722-980d-672e1109ca39"
+  ></script>
+  {% endif %}
 
   <!-- favicons
     ================================================== -->
@@ -96,6 +103,4 @@
     href="{% static 'favicon/favicon-16x16.png' %}"
   />
   <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}" />
-
-  
 </head>
