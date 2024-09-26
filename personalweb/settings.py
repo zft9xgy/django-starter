@@ -10,7 +10,7 @@ ENV_DIR=os.path.join(BASE_DIR, '.env')
 
 load_dotenv(ENV_DIR)
 
-PRODUCTION = (os.environ.get("MY_ENV_FILE") == "True")
+PRODUCTION = (os.environ.get("DJANGO_PRODUCTION") == "True")
 
 
 # Quick-start development settings - unsuitable for production
