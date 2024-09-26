@@ -2,7 +2,7 @@
 
 ## nexts
 
-- estandarizar lenguaje: inglés only.
+- rehacer la documentción.
 
 ### feat
 
