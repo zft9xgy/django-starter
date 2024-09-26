@@ -19,8 +19,8 @@ PRODUCTION = (os.environ.get("MY_ENV_FILE") == "True")
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", get_random_secret_key())
 
 if PRODUCTION:  
-    ALLOWED_HOSTS = ['dev.rafaelcosquiere.com']
-    CSRF_TRUSTED_ORIGINS = ['https://dev.rafaelcosquiere.com']
+    ALLOWED_HOSTS = ['django.rafaelcosquiere.com']
+    CSRF_TRUSTED_ORIGINS = ['https://django.rafaelcosquiere.com']
     CSRF_COOKIE_SECURE = True
 
     DEBUG = False
